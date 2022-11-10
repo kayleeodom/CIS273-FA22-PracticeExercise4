@@ -87,6 +87,7 @@ namespace PracticeExercise4
             // search the list for the key
             foreach(var bucket in list)
             {
+
                 if( bucket.Key.Equals( key))
                 {
                     return true;
@@ -127,7 +128,17 @@ namespace PracticeExercise4
         // TODO
         public List<V> GetValues()
         {
-            throw new NotImplementedException();
+            List<V> values = new List<V>();
+
+            foreach( var bucket in bucketListsArray)
+            {
+                foreach(var item in bucket)
+                {
+                    values.Add(item.Value);
+                }
+            }
+
+            return values; 
         }
 
         public bool Remove(K key)
@@ -161,6 +172,7 @@ namespace PracticeExercise4
         {
             int hash = key.GetHashCode();
 
+            // This makes sure it doesn't return a negative number
             return hash < 0 ? -hash : hash;
         }
     }
