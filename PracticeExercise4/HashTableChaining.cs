@@ -128,17 +128,7 @@ namespace PracticeExercise4
         // TODO
         public List<V> GetValues()
         {
-            List<V> values = new List<V>();
-
-            foreach( var bucket in bucketListsArray)
-            {
-                foreach(var item in bucket)
-                {
-                    values.Add(item.Value);
-                }
-            }
-
-            return values; 
+            throw new NotImplementedException();
         }
 
         public bool Remove(K key)
