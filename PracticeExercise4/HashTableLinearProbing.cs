@@ -25,11 +25,10 @@ namespace PracticeExercise4
 
         public int Count => count;
 
-        // percentage of buckets that are full filled/number
         public double LoadFactor => count / (double)buckets.Length;
 
         // O(1) - average case
-        // O(N) - worst case
+        // O(n) - worst case
         public bool Add(K key, V value)
         {
             // more than 60% full we need to resize
@@ -71,49 +70,43 @@ namespace PracticeExercise4
             return false;
         }
 
-        // TODO
         // O(1) - average case
-        // O(N) - worst case
+        // O(n) - worst case
         public bool ContainsKey(K key)
         {
             throw new NotImplementedException();
         }
 
-        // TODO
-        // O(N) - average case
-        // O(N) - worst case
+        // O(n) - average case
+        // O(n) - worst case
         public bool ContainsValue(V value)
         {
             throw new NotImplementedException();
         }
 
-        // TODO
         // O(1) - average case
-        // O(N) - worst case
+        // O(n) - worst case
         public V Get(K key)
         {
             throw new NotImplementedException();
         }
 
-        // TODO
-        // O(N) - average case
-        // O(N) - worst case
+        // O(n) - average case
+        // O(n) - worst case
         public List<K> GetKeys()
         {
             throw new NotImplementedException();
         }
 
-        // TODO
-        // O(N) - average case
-        // O(N) - worst case
+        // O(n) - average case
+        // O(n) - worst case
         public List<V> GetValues()
         {
             throw new NotImplementedException();
         }
 
-        // TODO
         // O(1) - average case
-        // O(N) - worst case
+        // O(n) - worst case
         public bool Remove(K key)
         {
             throw new NotImplementedException();
