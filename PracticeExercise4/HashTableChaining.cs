@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Reflection;
 
 namespace PracticeExercise4
 {
@@ -101,7 +103,23 @@ namespace PracticeExercise4
         // TODO
         public bool ContainsValue(V value)
         {
-            throw new NotImplementedException();
+            // create hashtable like a new one
+            //List<V> values = new List<V>();
+
+            // check if the hashtable contains the value
+            //if(List.ContainsValue(value))
+            //{
+            // if so return true
+            //    return true;
+            //}
+            //else
+            //{
+            // if no return false
+            //    return false;
+            //}
+            //throw new NotImplementedException();
+
+            return false;
         }
 
         // TODO
@@ -128,7 +146,17 @@ namespace PracticeExercise4
         // TODO
         public List<V> GetValues()
         {
-            throw new NotImplementedException();
+            List<V> values = new List<V>();
+
+            foreach (LinkedList<Bucket<K, V>> list in bucketListsArray)
+            {
+                foreach (var bucket in list)
+                {
+                    values.Add(bucket.Value);
+                }
+            }
+
+            return values;
         }
 
         public bool Remove(K key)

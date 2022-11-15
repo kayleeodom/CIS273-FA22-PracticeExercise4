@@ -74,7 +74,30 @@ namespace PracticeExercise4
         // O(n) - worst case
         public bool ContainsKey(K key)
         {
-            throw new NotImplementedException();
+            // find the hash
+            int hash = Hash(key);
+
+            // find the starting index
+            int startingIndex = hash % buckets.Length;
+            int bucketIndex = startingIndex;
+
+            while (buckets[bucketIndex].State != BucketState.EmptySinceStart)
+            {
+                if (buckets[bucketIndex].State == BucketState.Full && buckets[bucketIndex].Key.Equals(key))
+                {
+                    return true;
+                }
+
+                bucketIndex = (bucketIndex + 1) % buckets.Length;
+
+                if(bucketIndex == startingIndex)
+                {
+                    return false;
+                }
+            }
+
+            return false;
+
         }
 
         // O(n) - average case
@@ -95,21 +118,61 @@ namespace PracticeExercise4
         // O(n) - worst case
         public List<K> GetKeys()
         {
-            throw new NotImplementedException();
+            List<K> keys = new List<K>();
+
+            foreach (Bucket<K, V> list in buckets)
+            {
+                foreach (var bucket in buckets)
+                {
+                    keys.Add(bucket.Key);
+                }
+            }
+
+            return keys;
         }
 
         // O(n) - average case
         // O(n) - worst case
         public List<V> GetValues()
         {
-            throw new NotImplementedException();
+            List<V> values = new List<V>();
+
+            foreach (Bucket<K, V> list in buckets)
+            {
+                foreach (var bucket in buckets)
+                {
+                    values.Add(bucket.Value);
+                }
+            }
+
+            return values;
         }
 
         // O(1) - average case
         // O(n) - worst case
         public bool Remove(K key)
         {
-            throw new NotImplementedException();
+            // find the hash of the key
+            int hash = Hash(key);
+
+            // find the bucket index
+            int index = hash % buckets.Length;
+
+            // find the list
+            var list = buckets[index];
+
+            // find the key in the list
+            foreach (var bucket in buckets)
+            {
+                if (bucket.Key.Equals(key))
+                {
+                    // add some code about remove
+                    count--;
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void Resize() 
