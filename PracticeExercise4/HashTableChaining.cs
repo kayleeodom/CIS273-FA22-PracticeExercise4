@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -104,10 +105,10 @@ namespace PracticeExercise4
         public bool ContainsValue(V value)
         {
             // create hashtable like a new one
-            //List<V> values = new List<V>();
+            //var newHashTable = new HashTableChaining(value);
 
             // check if the hashtable contains the value
-            //if(List.ContainsValue(value))
+            //if(.Equals(value))
             //{
             // if so return true
             //    return true;
@@ -117,13 +118,11 @@ namespace PracticeExercise4
             // if no return false
             //    return false;
             //}
-            //throw new NotImplementedException();
-
-            return false;
+            throw new NotImplementedException();
         }
 
         // TODO
-        public V Get(K key)
+        public V Get(K key, V list)
         {
             throw new NotImplementedException();
         }
